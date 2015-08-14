@@ -5,7 +5,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
-$dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'DB_PREFIX', 'WP_HOME', 'WP_SITEURL']);
+$dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'DB_PREFIX', 'WP_HOME', 'WP_SITEURL', 'WP_ENV']);
 
 // database settings
 define('DB_NAME', getenv('DB_NAME'));
@@ -26,10 +26,17 @@ define('WP_CONTENT_DIR', __DIR__ . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 
 // include salts
-if( !file_exists(__DIR__ . '/config/salts.php')) {
+if (!file_exists(__DIR__ . '/config/salts.php')) {
   throw new Exception('You need to include salts. Please run salts.sh.');
 } else {
   require_once(__DIR__ . '/config/salts.php');
+}
+
+// environment config
+define('WP_ENV', getenv('WP_ENV'));
+$env_config = __DIR__ . '/config/environments/' . WP_ENV . '.php';
+if (file_exists($env_config)) {
+  require_once $env_config;
 }
 
 // wordpress is here
