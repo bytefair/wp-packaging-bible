@@ -1,6 +1,18 @@
 {
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    }
+  ],
   "require": {
     "php": ">=5.3.2",
     "johnpbloch/wordpress": "4.2.4"
+  },
+  "extra": {
+    "installer-paths": {
+      "app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "app/themes/{$name}/": ["type:wordpress-theme"]
+    }
   }
 }
