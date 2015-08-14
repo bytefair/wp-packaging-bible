@@ -3,3 +3,9 @@
 
 # Composer
 /vendor/*
+
+# App code
+/app/plugins/*
+!/app/plugins/index.php
+/app/themes/*
+!/app/themes/index.php

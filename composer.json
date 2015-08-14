@@ -7,7 +7,9 @@
   ],
   "require": {
     "php": ">=5.3.2",
-    "johnpbloch/wordpress": "4.2.4"
+    "johnpbloch/wordpress": "4.2.4",
+    "wpackagist-plugin/advanced-custom-fields": "^4.4",
+    "wpackagist-theme/twentyfifteen": "^1.2"
   },
   "extra": {
     "installer-paths": {
