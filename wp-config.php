@@ -25,6 +25,13 @@ define('CONTENT_DIR', '/app');
 define('WP_CONTENT_DIR', __DIR__ . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 
+// include salts
+if( !file_exists(__DIR__ . '/config/salts.php')) {
+  throw new Exception('You need to include salts. Please run salts.sh.');
+} else {
+  require_once(__DIR__ . '/config/salts.php');
+}
+
 // wordpress is here
 if ( !defined('ABSPATH') )
   define('ABSPATH', dirname(__FILE__) . '/wordpress/');

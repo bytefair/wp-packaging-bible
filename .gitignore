@@ -12,3 +12,4 @@
 
 # Secrets
 .env
+/config/salts.php
