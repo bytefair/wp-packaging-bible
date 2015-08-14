@@ -9,3 +9,6 @@
 !/app/plugins/index.php
 /app/themes/*
 !/app/themes/index.php
+
+# Secrets
+.env
