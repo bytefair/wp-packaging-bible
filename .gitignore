@@ -1,2 +1,5 @@
 # WP Core
-/wp/*
+/wordpress/*
+
+# Composer
+/vendor/*
