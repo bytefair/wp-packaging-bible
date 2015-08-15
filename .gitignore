@@ -13,3 +13,14 @@
 # Secrets
 .env
 /config/salts.php
+
+# wp-content bans
+/app/advanced-cache.php
+/app/backup-db/*
+/app/backups/*
+/app/blogs.dir/*
+/app/cache/*
+/app/upgrade/*
+/app/uploads/*
+/app/wp-cache-config.php
+/app/w3tc-config/*
